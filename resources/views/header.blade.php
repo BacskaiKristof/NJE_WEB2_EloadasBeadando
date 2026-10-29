@@ -22,6 +22,9 @@
 
         @if (Auth::check())
           <li class="nav-item {{ $menu('uzenetek') }}"><a href="{{ route('uzenetek') }}" class="nav-link">Üzenetek</a></li>
+          @if (Auth::User()->role==1)
+            <li class="nav-item {{ $menu('crud.*') }}"><a href="{{ route('crud.index') }}" class="nav-link">CRUD</a></li>
+          @endif
           <li class="nav-item">
             {{-- Kijelentkezés: POST kérés kell (CSRF), ezért egy rejtett űrlapot küld el a menüpont --}}
             <a href="{{ url('/logout') }}" id="kijelentkezes" class="nav-link" title="Bejelentkezve: {{ Auth::user()->name }}"

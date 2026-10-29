@@ -4,7 +4,9 @@ use App\Http\Controllers\AdatbazisController;
 use App\Http\Controllers\DiagramController;
 use App\Http\Controllers\FooldalController;
 use App\Http\Controllers\KapcsolatController;
+use App\Http\Controllers\PizzaController;
 use App\Http\Controllers\UzenetController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +33,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Órai feladat oldalai
     Route::get('user', function () { return view('user'); })->name("user");
     Route::get('admin', 'App\Http\Controllers\AdminController@adminPage');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Csak admin: CRUD a pizza táblához
+|--------------------------------------------------------------------------
+*/
+Route::middleware(['auth', AdminMiddleware::class])->group(function () {
+    Route::resource('crud', PizzaController::class)->parameters(['crud' => 'pizza'])->only(['index', 'show']);
 });
 
 require __DIR__.'/settings.php';
