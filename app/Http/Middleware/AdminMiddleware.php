@@ -6,11 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-/**
- * Csak admin szerepkörű (role == 1) felhasználót enged tovább.
- * Az órai AdminController-ben lévő ellenőrzés továbbfejlesztése:
- * így több útvonalat (pl. a teljes CRUD-ot) is egyszerre védhetünk vele.
- */
+
 class AdminMiddleware
 {
     public function handle(Request $request, Closure $next): Response
