@@ -11,6 +11,7 @@
             <p class="mb-1"><span class="text-white">Ár:</span> {{ $ft($ar) }}</p>
             <p class="mb-1"><span class="text-white">Vegetáriánus:</span> {{ $pizza->vegetarianus ? 'igen' : 'nem' }}</p>
             <p class="mb-3"><span class="text-white">Eladott darab:</span> {{ $pizza->rendelesek->sum('darab') }}</p>
+            <a href="{{ route('crud.edit', $pizza) }}" class="btn btn-primary py-2 px-4">Szerkesztés</a>
             <a href="{{ route('crud.index') }}" class="btn btn-white btn-outline-white py-2 px-4">Vissza</a>
           </div>
         </div>

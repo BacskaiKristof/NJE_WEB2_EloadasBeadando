@@ -5,6 +5,7 @@
     <div class="container">
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
         <h2 class="h3 mb-2 text-white">Pizzák kezelése <small class="text-muted">({{ $pizzak->total() }} db)</small></h2>
+        <a href="{{ route('crud.create') }}" class="btn btn-primary py-2 px-4 mb-2">+ Új pizza</a>
       </div>
 
       <form method="get" action="{{ route('crud.index') }}" class="szuro-form mb-3">
@@ -32,6 +33,14 @@
                 <td class="text-right">{{ $p->rendelesek_count }}</td>
                 <td class="text-right text-nowrap">
                   <a href="{{ route('crud.show', $p) }}" class="btn btn-sm btn-muvelet">Megtekint</a>
+                  <a href="{{ route('crud.edit', $p) }}" class="btn btn-sm btn-muvelet">Szerkeszt</a>
+                  <form method="post" action="{{ route('crud.destroy', $p) }}" class="d-inline"
+                        data-kerdes="Biztosan törli: {{ $p->nev }}?{{ $p->rendelesek_count ? ' A hozzá tartozó '.$p->rendelesek_count.' rendelés is törlődik!' : '' }}"
+                        onsubmit="return confirm(this.dataset.kerdes);">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-torles">Töröl</button>
+                  </form>
                 </td>
               </tr>
             @empty

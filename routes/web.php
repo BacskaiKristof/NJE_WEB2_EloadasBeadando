@@ -41,7 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 |--------------------------------------------------------------------------
 */
 Route::middleware(['auth', AdminMiddleware::class])->group(function () {
-    Route::resource('crud', PizzaController::class)->parameters(['crud' => 'pizza'])->only(['index', 'show']);
+    Route::resource('crud', PizzaController::class)->parameters(['crud' => 'pizza']);
 });
 
 require __DIR__.'/settings.php';
