@@ -18,6 +18,7 @@
         <li class="nav-item {{ $menu('home') }}"><a href="{{ route('home') }}" class="nav-link">Főoldal</a></li>
         <li class="nav-item {{ $menu('adatbazis') }}"><a href="{{ route('adatbazis') }}" class="nav-link">Adatbázis</a></li>
         <li class="nav-item {{ $menu('kapcsolat') }}"><a href="{{ route('kapcsolat') }}" class="nav-link">Kapcsolat</a></li>
+        <li class="nav-item {{ $menu('diagram') }}"><a href="{{ route('diagram') }}" class="nav-link">Diagram</a></li>
 
         @if (Auth::check())
           <li class="nav-item {{ $menu('uzenetek') }}"><a href="{{ route('uzenetek') }}" class="nav-link">Üzenetek</a></li>
