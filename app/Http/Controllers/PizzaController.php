@@ -74,7 +74,7 @@ class PizzaController extends Controller
         ]);
     }
 
-    /** UPDATE: mentés (a név is módosítható, a rendelések ON UPDATE CASCADE-del követik) */
+    /** UPDATE: mentés  */
     public function update(Request $request, Pizza $pizza)
     {
         $adatok = $request->validate([
@@ -92,7 +92,7 @@ class PizzaController extends Controller
     public function destroy(Pizza $pizza)
     {
         $nev = $pizza->nev;
-        $pizza->delete(); // a hozzá tartozó rendelések ON DELETE CASCADE-del törlődnek
+        $pizza->delete(); 
 
         return redirect()->route('crud.index')->with('siker', "A(z) \"{$nev}\" pizza törölve.");
     }
