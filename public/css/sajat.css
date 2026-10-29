@@ -1,0 +1,63 @@
+/* Saját kiegészítések a "Pizza" (Colorlib) template-hez */
+
+/* A template háttérképe alatt is sötét maradjon az oldal (hosszú oldalaknál) */
+body { background-color: #121618; }
+
+/* Menü */
+.nev-cimke { text-transform: none; opacity: .7; font-size: 11px; }
+@media (min-width: 992px) { .navbar-brand { font-size: 18px; } }
+
+/* Visszajelző üzenetek */
+.alert-sajat { border-radius: 0; border: 1px solid; background: rgba(255,255,255,.04); }
+.alert-siker { border-color: #3b8a4e; color: #9fdcae; }
+.alert-hiba  { border-color: #a5463f; color: #f2a9a2; }
+
+/* Űrlapok */
+.urlap-doboz { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); padding: 2rem; }
+.urlap-doboz label { color: rgba(255,255,255,.8); }
+.urlap-mezo, .contact-form .form-control, .szuro-form .form-control {
+  border: 1px solid rgba(255,255,255,.15) !important;
+}
+.form-control.form-control-sm { height: 38px !important; font-size: 14px; }
+.form-control.is-invalid { border-color: #e06c62 !important; }
+.hiba-szoveg { color: #f2a9a2; font-size: 14px; margin-top: 6px; }
+select.form-control option { color: #212529; background: #fff; }
+.form-check-label { color: rgba(255,255,255,.8); }
+.contact-form textarea.form-control { height: auto !important; }
+
+/* Táblázatok */
+.tabla-cim { color: #fff; font-size: 22px; margin-bottom: 1rem; scroll-margin-top: 90px; }
+.tabla-cim small { font-size: 14px; color: gray; }
+.tabla-cim span { color: #fac564; margin-right: 6px; }
+.tabla-sajat { color: rgba(255,255,255,.8); font-size: 15px; }
+.tabla-sajat thead th { color: #fac564; border-top: 0; border-bottom: 1px solid rgba(250,197,100,.4); font-weight: 500; white-space: nowrap; }
+.tabla-sajat td { border-top: 1px solid rgba(255,255,255,.07); vertical-align: middle; }
+.tabla-sajat tbody tr:hover { background: rgba(255,255,255,.04); }
+.tabla-sajat .ar { color: #fac564; white-space: nowrap; }
+.tabla-uzenet .uzenet-szoveg { min-width: 240px; }
+.cimke-vega, .cimke-tag { display: inline-block; padding: 0 8px; font-size: 12px; border: 1px solid #6fbf7f; color: #9fdcae; border-radius: 10px; }
+.cimke-tag { border-color: #4a8fd6; color: #9cc3ef; }
+
+.btn-muvelet { border: 1px solid rgba(255,255,255,.3); color: #fff; border-radius: 0; }
+.btn-muvelet:hover { border-color: #fac564; color: #fac564; }
+.btn-torles { border: 1px solid #a5463f; color: #f2a9a2; border-radius: 0; background: transparent; }
+.btn-torles:hover { background: #a5463f; color: #fff; }
+
+/* Ugrómenü az adatbázis oldalon */
+.ugro-menu .nav-link { color: #fff; border: 1px solid rgba(255,255,255,.2); margin: 4px; border-radius: 0; }
+.ugro-menu .nav-link:hover { border-color: #fac564; color: #fac564; }
+
+/* Lapozó */
+.lapozo .pagination { flex-wrap: wrap; }
+.lapozo .page-link { background: transparent; border-color: rgba(255,255,255,.15); color: #fff; }
+.lapozo .page-item.active .page-link { background: #fac564; border-color: #fac564; color: #000; }
+.lapozo .page-item.disabled .page-link { background: transparent; color: gray; border-color: rgba(255,255,255,.08); }
+.lapozo p.small { color: gray; }
+
+/* Diagramok */
+.diagram-doboz { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); padding: 1.5rem; height: 100%; }
+.diagram-doboz h3 { color: #fff; font-size: 18px; margin-bottom: 1rem; }
+.diagram-vaszon { position: relative; height: 280px; }
+.diagram-vaszon.magas { height: 340px; }
+.diagram-tabla { margin-top: 1rem; font-size: 14px; }
+.diagram-tabla summary { cursor: pointer; color: #fac564; }
