@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdatbazisController;
 use App\Http\Controllers\KapcsolatController;
+use App\Http\Controllers\UzenetController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -23,6 +24,7 @@ Route::post('kapcsolat', [KapcsolatController::class, 'store'])->name('kapcsolat
 Route::middleware(['auth', 'verified'])->group(function () {
     // Bejelentkezés / regisztráció után ide irányít a starter kit -> főoldalra küldjük
     Route::get('dashboard', function () { return redirect()->route('home'); })->name('dashboard');
+    Route::get('uzenetek', [UzenetController::class, 'index'])->name('uzenetek');
 
     // Órai feladat oldalai
     Route::get('user', function () { return view('user'); })->name("user");

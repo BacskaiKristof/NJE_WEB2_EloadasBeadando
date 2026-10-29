@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserSeeder::class);      // felhasználók (User1, admin)
         $this->call(PizzeriaSeeder::class);  // kategoria, pizza, rendeles táblák
+        $this->call(UzenetSeeder::class);    // minta üzenetek
     }
 }

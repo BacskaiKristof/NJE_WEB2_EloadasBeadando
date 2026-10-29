@@ -20,6 +20,7 @@
         <li class="nav-item {{ $menu('kapcsolat') }}"><a href="{{ route('kapcsolat') }}" class="nav-link">Kapcsolat</a></li>
 
         @if (Auth::check())
+          <li class="nav-item {{ $menu('uzenetek') }}"><a href="{{ route('uzenetek') }}" class="nav-link">Üzenetek</a></li>
           <li class="nav-item">
             {{-- Kijelentkezés: POST kérés kell (CSRF), ezért egy rejtett űrlapot küld el a menüpont --}}
             <a href="{{ url('/logout') }}" id="kijelentkezes" class="nav-link" title="Bejelentkezve: {{ Auth::user()->name }}"
