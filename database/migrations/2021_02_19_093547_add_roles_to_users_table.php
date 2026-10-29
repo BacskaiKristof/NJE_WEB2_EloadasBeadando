@@ -8,6 +8,7 @@ class AddRolesToUsersTable extends Migration
 {
     /**
      * Run the migrations.
+     * Felhasználói szerep: 1 = admin, 2 = regisztrált látogató (alapértelmezett)
      *
      * @return void
      */
@@ -26,7 +27,7 @@ class AddRolesToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('role');
         });
     }
 }
