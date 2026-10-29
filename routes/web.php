@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdatbazisController;
 use App\Http\Controllers\KapcsolatController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -10,6 +11,7 @@ use Inertia\Inertia;
 |--------------------------------------------------------------------------
 */
 Route::get('/', function () {return Inertia::render('welcome');})->name('home');
+Route::get('adatbazis', [AdatbazisController::class, 'index'])->name('adatbazis');
 Route::get('kapcsolat', [KapcsolatController::class, 'create'])->name('kapcsolat');
 Route::post('kapcsolat', [KapcsolatController::class, 'store'])->name('kapcsolat.store');
 

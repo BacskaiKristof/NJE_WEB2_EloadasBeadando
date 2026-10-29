@@ -16,6 +16,7 @@
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item {{ $menu('home') }}"><a href="{{ route('home') }}" class="nav-link">Főoldal</a></li>
+        <li class="nav-item {{ $menu('adatbazis') }}"><a href="{{ route('adatbazis') }}" class="nav-link">Adatbázis</a></li>
         <li class="nav-item {{ $menu('kapcsolat') }}"><a href="{{ route('kapcsolat') }}" class="nav-link">Kapcsolat</a></li>
 
         @if (Auth::check())
