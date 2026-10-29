@@ -2,17 +2,17 @@
 
 use App\Http\Controllers\AdatbazisController;
 use App\Http\Controllers\DiagramController;
+use App\Http\Controllers\FooldalController;
 use App\Http\Controllers\KapcsolatController;
 use App\Http\Controllers\UzenetController;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
 | Mindenki (látogató) számára elérhető menük
 |--------------------------------------------------------------------------
 */
-Route::get('/', function () {return Inertia::render('welcome');})->name('home');
+Route::get('/', [FooldalController::class, 'index'])->name('home');
 Route::get('adatbazis', [AdatbazisController::class, 'index'])->name('adatbazis');
 Route::get('kapcsolat', [KapcsolatController::class, 'create'])->name('kapcsolat');
 Route::post('kapcsolat', [KapcsolatController::class, 'store'])->name('kapcsolat.store');
@@ -49,4 +49,4 @@ Route::middleware('guest')->group(function () {
 
 // Órai feladatok
 Route::get('exercise1', function () { return view('view1'); });
-Route::get('introduction', function () { return view('introduction'); });
+Route::get('introduction', function () { return redirect()->route('home'); });

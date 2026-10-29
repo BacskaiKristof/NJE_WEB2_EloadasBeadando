@@ -16,6 +16,16 @@
           <p>Pizzéria webalkalmazás – a Web-programozás II. beadandó feladata. Laravel keretrendszerrel és MySQL adatbázissal készült.</p>
         </div>
       </div>
+      <div class="col-lg-4 col-md-6 mb-5">
+        <div class="ftco-footer-widget mb-4 ml-md-4">
+          <h2 class="ftco-heading-2">Menü</h2>
+          <ul class="list-unstyled">
+            <li><a href="{{ route('adatbazis') }}" class="py-1 d-block">Adatbázis</a></li>
+            <li><a href="{{ route('diagram') }}" class="py-1 d-block">Diagram</a></li>
+            <li><a href="{{ route('kapcsolat') }}" class="py-1 d-block">Kapcsolat</a></li>
+          </ul>
+        </div>
+      </div>
       <div class="col-lg-4 col-md-12 mb-5">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">Készítők</h2>
